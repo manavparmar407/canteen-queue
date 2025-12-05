@@ -1,10 +1,19 @@
+import os
 import mysql.connector
+from urllib.parse import urlparse
 
 def get_connection():
-    conn = mysql.connector.connect(
-        host="localhost",
-        user="root",          # apna MySQL user
-        password="root123",   # apna MySQL password
-        database="canteen_queue"
+    url = os.getenv("DATABASE_URL")
+
+    if not url:
+        raise Exception("DATABASE_URL not found in environment!")
+
+    parsed = urlparse(url)
+
+    return mysql.connector.connect(
+        host=parsed.hostname,
+        user=parsed.username,
+        password=parsed.password,
+        port=parsed.port,
+        database=parsed.path.lstrip("/")
     )
-    return conn
