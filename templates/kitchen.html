@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitchen Dashboard - Canteen Queue</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Kitchen Dashboard</h1>
+        <p class="subtitle">Manage pending orders in real-time</p>
+        <a href="{{ url_for('admin_logout') }}" class="admin-link">Logout</a>
+    </div>
+
+    <section>
+        <h2>Incoming Orders</h2>
+        <button onclick="loadKitchenOrders()">Refresh Orders</button>
+        <table>
+            <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Student</th>
+                <th>Reg ID</th>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Status</th>
+                <th>Order Time</th>
+                <th>Update</th>
+            </tr>
+            </thead>
+            <tbody id="kitchen-orders-body">
+            <!-- Filled by JS -->
+            </tbody>
+        </table>
+        <p id="kitchen-message" class="info-text"></p>
+    </section>
+</div>
+
+<script src="{{ url_for('static', filename='kitchen.js') }}"></script>
+</body>
+</html>

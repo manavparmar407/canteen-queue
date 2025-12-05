@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canteen Queue System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .home-container {
+            text-align: center;
+            margin-top: 120px;
+            color: white;
+        }
+        .btn-option {
+            background-color: #3B82F6;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            border: none;
+            margin: 15px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .btn-option:hover {
+            background-color: #2563EB;
+        }
+        body {
+            background: #111827;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<div class="home-container">
+    <h1>Canteen Queue Optimization System</h1>
+    <p>Select your portal</p>
+    
+    <a href="/student"><button class="btn-option">Student Dashboard</button></a>
+    <a href="/admin-login"><button class="btn-option" style="background:#EF4444;">Admin Login</button></a>
+</div>
+
+</body>
+</html>
